@@ -125,23 +125,6 @@ def cart_page(driver):
     return CartPage(driver)
 
 
-def pytest_addoption(parser):
-    """Добавление опций командной строки"""
-    parser.addoption(
-        "--browser", action="store", default="chrome",
-        help="Browser to use for tests (chrome, firefox)"
-    )
-    parser.addoption(
-        "--headless", action="store_true", default=False,
-        help="Run tests in headless mode"
-    )
-    parser.addoption(
-        "--base-url", action="store",
-        default="https://www.chitai-gorod.ru",
-        help="Base URL for tests"
-    )
-
-
 def pytest_configure(config):
     """Конфигурация pytest"""
     config.addinivalue_line(
